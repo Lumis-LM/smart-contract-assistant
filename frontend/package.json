@@ -1,0 +1,11 @@
+{
+  "name": "smart-contract-assistant-frontend",
+  "version": "1.0.0",
+  "description": "Web3 style Smart Contract AI Assistant Frontend",
+  "scripts": {
+    "start": "python -m http.server 3000",
+    "dev": "live-server --port=3000"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
