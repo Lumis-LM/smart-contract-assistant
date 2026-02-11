@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API测试页面</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>.test-container { max-width: 800px; margin: 50px auto; padding: 30px; }</style>
+</head>
+<body>
+    <div class="test-container card">
+        <h2>API 连接测试</h2>
+        <p>这是一个用于验证后端API连接的简化页面。</p>
+        <button onclick="testConnection()" class="cta-button" style="margin:20px 0">测试健康检查</button>
+        <div id="testResult"></div>
+        <a href="assistant.html" class="secondary-button" style="display:inline-block;margin-top:20px;">前往完整助手页面</a>
+    </div>
+    <script>
+        async function testConnection() {
+            const resultDiv = document.getElementById('testResult');
+            resultDiv.innerHTML = '<p>正在连接...</p>';
+            try {
+                const response = await fetch('http://localhost:5000/api/health');
+                const data = await response.json();
+                resultDiv.innerHTML = `<p style="color:green">✅ 连接成功！服务状态: ${data.status}</p>`;
+            } catch (error) {
+                resultDiv.innerHTML = `<p style="color:red">❌ 连接失败: ${error.message}</p>`;
+            }
+        }
+    </script>
+</body>
+</html>
