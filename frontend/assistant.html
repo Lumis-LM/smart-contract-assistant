@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能合约助手 | 交互界面</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cyber-grid"></div>
+    <div class="container">
+        <div class="top-bar">
+            <div class="logo-small"><i class="fas fa-code"></i> CONTRACT AI</div>
+            <div class="status-indicator"><div class="status-dot pulse"></div><span>服务已连接</span></div>
+            <div><a href="index.html" class="nav-icon" title="返回主页"><i class="fas fa-home"></i></a></div>
+        </div>
+        <div class="main-layout">
+            <div class="chat-container">
+                <div class="chat-header">
+                    <h2><i class="fas fa-robot"></i> 智能合约助手</h2>
+                    <p class="chat-subtitle">输入关于Solidity、安全、DeFi或任何智能合约相关的问题。</p>
+                </div>
+                <div class="messages-container" id="messagesContainer">
+                    <div class="message ai-message">
+                        <div class="message-header"><span><i class="fas fa-robot"></i> Contract Assistant</span><span>现在</span></div>
+                        <div class="message-content">
+                            <p>👋 你好！我是你的智能合约AI助手。</p>
+                            <p>我可以帮助你：</p>
+                            <ul>
+                                <li>解释智能合约概念与最佳实践</li>
+                                <li>生成或审查Solidity代码片段</li>
+                                <li>分析潜在的安全漏洞与修复方案</li>
+                                <li>解答关于ERC标准、DeFi协议、Gas优化等问题</li>
+                            </ul>
+                            <p>请直接在下方输入你的问题，或点击右侧的示例问题快速开始。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-area">
+                    <textarea id="questionInput" placeholder="输入你的问题，例如：如何编写一个防止重入攻击的提款函数？..." rows="1"></textarea>
+                    <button id="sendButton"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+            <div class="sidebar">
+                <div class="sidebar-card example-questions">
+                    <h3><i class="fas fa-bolt"></i> 快速示例</h3>
+                    <a class="question-chip">ERC20 代币合约的基本结构是什么？</a>
+                    <a class="question-chip">请写一个安全的 NFT（ERC721） mint 函数。</a>
+                    <a class="question-chip">如何用 Solidity 0.8.x 安全地进行数学运算？</a>
+                    <a class="question-chip">Uniswap V2 配对合约的核心逻辑是什么？</a>
+                </div>
+                <div class="sidebar-card stats">
+                    <h3><i class="fas fa-chart-line"></i> 会话状态</h3>
+                    <div class="stat-item"><span>当前模型</span><span class="stat-value" id="currentModel">qwen3-next-80b</span></div>
+                    <div class="stat-item"><span>本次回答 Token</span><span class="stat-value" id="tokenUsed">0</span></div>
+                    <div class="stat-item"><span>响应来源</span><span class="stat-value" id="responseSource">AI 服务</span></div>
+                    <div class="stat-item"><span>历史消息</span><span class="stat-value" id="messageCount">1</span></div>
+                </div>
+                <div class="sidebar-card">
+                    <h3><i class="fas fa-info-circle"></i> 提示</h3>
+                    <p class="tip-text">• 问题描述越具体，回答越精准。<br>• 代码块可直接复制使用，但生产环境请务必审计。<br>• 点击示例问题可快速填充输入框。<br>• 所有对话仅在此页面保存，刷新后清空。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
