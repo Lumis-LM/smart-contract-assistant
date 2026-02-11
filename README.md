@@ -118,7 +118,7 @@ python -m http.server 3000
 ```python
 # ========== 配置区域 ==========
 AI_PROVIDER = 'openai_compatible'  # 或 'mock' 使用模拟模式
-AI_MODEL = 'qwen3-next-80b-a3b-thinking'  # 使用的 AI 模型
+AI_MODEL = 'qwen3-next-80b-a3b-thinking'  # 使用的 AI 模型，以阿里云百炼api为例
 OPENAI_COMPATIBLE_BASE_URL = 'https://dashscope.aliyuncs.com/compatible-mode/v1'  # 兼容接口地址
 # ========== 配置区域结束 ==========
 ```
@@ -154,7 +154,7 @@ GET /api/health
 {
   "status": "healthy",
   "service": "smart_contract_assistant",
-  "timestamp": "2023-10-01T12:00:00.000Z",
+  "timestamp": "2026-2-11T12:00:00.000Z",
   "provider": "openai_compatible",
   "model": "qwen3-next-80b-a3b-thinking"
 }
